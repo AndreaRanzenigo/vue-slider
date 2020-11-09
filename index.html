@@ -28,10 +28,11 @@
             </div>
 
             <div class="circle">
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
+                <i v-for="(photos, index) in photos" 
+                class="fas fa-circle"
+                :class="['fas fa-circle', index == indexPhoto ? 'active' : null]"
+                @click="setCircle(index)"
+                ></i>
             </div>
         </div>
     </div>

@@ -24,8 +24,11 @@ const app = new Vue({
             this.indexPhoto -= 1;
 
             if (this.indexPhoto < 0) {
-                this.indexPhoto = 3;
+                this.indexPhoto = this.photos.length - 1;
             }
+        },
+        setCircle(index) {
+            this.indexPhoto = index;
         }
     }
 });
