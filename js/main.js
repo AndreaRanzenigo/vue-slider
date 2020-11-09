@@ -4,11 +4,28 @@ const app = new Vue({
     data: {
         indexPhoto: 0,
         photos: [
-            './img/immage1.jpg',
-            './img/immage2.jpg',
-            './img/immage3.jpg',
-            './img/immage4.jpg',
+            './img/image1.jpg',
+            './img/image2.jpg',
+            './img/image3.jpg',
+            './img/image4.jpg',
         ],
 
+    },
+    methods: {
+        nextImage() {
+            this.indexPhoto += 1;
+
+            if (this.indexPhoto > (this.photos.length - 1)) {
+                this.indexPhoto = 0;
+            }
+        },
+
+        prevImage() {
+            this.indexPhoto -= 1;
+
+            if (this.indexPhoto < 0) {
+                this.indexPhoto = 3;
+            }
+        }
     }
 });
