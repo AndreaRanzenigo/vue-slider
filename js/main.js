@@ -9,7 +9,10 @@ const app = new Vue({
             './img/image3.jpg',
             './img/image4.jpg',
         ],
-
+        interval: 0,
+    },
+    created() {
+        this.slideLoop();
     },
     methods: {
         nextImage() {
@@ -29,6 +32,14 @@ const app = new Vue({
         },
         setCircle(index) {
             this.indexPhoto = index;
+        },
+        slideLoop() {
+            this.interval = setInterval(() => {
+                this.nextImage();
+            }, 3000);
+        },
+        stopSlideLoop() {
+            clearInterval(this.interval);
         }
     }
 });
